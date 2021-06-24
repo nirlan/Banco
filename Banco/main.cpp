@@ -5,19 +5,23 @@
 
 using namespace std;
 
+void ExibeSaldo(const Conta& conta)
+{
+	cout << "O saldo da conta é: " << conta.recuperaSaldo() << endl;
+}
+
 int main()
 {
 	setlocale(LC_ALL, "Portuguese");
 
-	Conta umaConta;
-	umaConta.definirNomeTitular("Nirlan");
+	Conta umaConta("123456", "Nirlan", "123.456.789-10");
+	umaConta.depositar(500);
+	umaConta.sacar(200);
 
-	Conta umaOutraConta;
-
-	umaOutraConta.depositar(500);
-	umaOutraConta.sacar(200);
-
-	cout << "Uma conta: " << umaConta.recuperaSaldo() << " Outra conta: " << "umaOutraConta: " << umaOutraConta.recuperaSaldo() << endl;
+	cout << "Uma conta: " << umaConta.recuperaSaldo() 
+		<< " Nome do titular: " << umaConta.recuperaNomeTitular()
+		<< " CPF do titular: " << umaConta.recuperaCpfTitular()
+		<< " Numero da conta: " << umaConta.recuperaNumero() << endl;
 
 	return 0;
 }

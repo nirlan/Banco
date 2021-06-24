@@ -1,6 +1,14 @@
 #include <iostream>
 #include "Conta.hpp"
 
+Conta::Conta(std::string numeroConta, std::string nomeTitular, std::string cpfTitular) :
+	numeroConta(numeroConta),
+	nomeTitular(nomeTitular),
+	cpfTitular(cpfTitular),
+	saldo(0)
+{
+}
+
 void Conta::sacar(float valorASacar)
 {
 	if (saldo < 0) {
@@ -25,37 +33,22 @@ void Conta::depositar(float valorADepositar)
 	saldo += valorADepositar;
 }
 
-float Conta::recuperaSaldo()
+float Conta::recuperaSaldo() const
 {
 	return saldo;
 }
 
-void Conta::definirNomeTitular(std::string nome)
-{
-	nomeTitular = nome;
-}
-
-std::string Conta::recuperaNomeTitular()
+std::string Conta::recuperaNomeTitular() const
 {
 	return nomeTitular;
 }
 
-void Conta::definirCpfTitular(std::string cpf)
-{
-	cpfTitular = cpf;
-}
-
-std::string Conta::recuperaCpfTitular()
+std::string Conta::recuperaCpfTitular() const
 {
 	return cpfTitular;
 }
 
-void Conta::definirNumero(std::string numero)
-{
-	numeroConta = numero;
-}
-
-std::string Conta::recuperaNumero()
+std::string Conta::recuperaNumero() const
 {
 	return numeroConta;
 }

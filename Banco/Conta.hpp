@@ -5,18 +5,21 @@ class Conta
 {
 private:
 	std::string numeroConta;
-	std::string cpfTitular;
 	std::string nomeTitular;
-	float saldo = 0;
+	std::string cpfTitular;
+	float saldo;
 
 public:
+	// elimina o construtor padrão
+	Conta() = delete;
+
+	// método construtor
+	Conta(std::string numeroConta, std::string nomeTitular, std::string cpfTitular);
+
 	void sacar(float valorASacar);
 	void depositar(float valorADepositar);
-	float recuperaSaldo();
-	void definirNomeTitular(std::string nome);
-	std::string recuperaNomeTitular();
-	void definirCpfTitular(std::string cpf);
-	std::string recuperaCpfTitular();
-	void definirNumero(std::string numero);
-	std::string recuperaNumero();
+	float recuperaSaldo() const;
+	std::string recuperaNomeTitular() const;
+	std::string recuperaCpfTitular() const;
+	std::string recuperaNumero() const;
 };
