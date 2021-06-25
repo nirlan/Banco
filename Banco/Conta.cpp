@@ -1,12 +1,16 @@
 #include <iostream>
 #include "Conta.hpp"
 
+// variável static
+int Conta::numeroDeContas = 0;
+
 Conta::Conta(std::string numeroConta, std::string nomeTitular, std::string cpfTitular) :
 	numeroConta(numeroConta),
 	nomeTitular(nomeTitular),
 	cpfTitular(cpfTitular),
 	saldo(0)
 {
+	numeroDeContas++;
 }
 
 void Conta::sacar(float valorASacar)
@@ -27,7 +31,6 @@ void Conta::depositar(float valorADepositar)
 {
 	if (valorADepositar < 0) {
 		std::cout << "Não pode depositar valor negativo" << std::endl;
-
 	}
 
 	saldo += valorADepositar;
@@ -51,4 +54,10 @@ std::string Conta::recuperaCpfTitular() const
 std::string Conta::recuperaNumero() const
 {
 	return numeroConta;
+}
+
+// método static
+int Conta::recuperaNumeroDeContas()
+{
+	return numeroDeContas;
 }

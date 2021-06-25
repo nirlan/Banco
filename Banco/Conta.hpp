@@ -4,6 +4,12 @@
 class Conta
 {
 private:
+	static int numeroDeContas;
+
+public:
+	static int recuperaNumeroDeContas();
+
+private:
 	std::string numeroConta;
 	std::string nomeTitular;
 	std::string cpfTitular;
