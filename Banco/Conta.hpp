@@ -5,12 +5,16 @@
 class Conta
 {
 private:
+	// atributo estático - comum a todas as instâncias de Conta
 	static int numeroDeContas;
 
 public:
+	/* Método estático - não carrega a referência a um ponteiro
+	   para uma instância da classe */ 
 	static int recuperaNumeroDeContas();
 
 private:
+	// atributos privados
 	std::string numero;
 	Titular titular;
 	float saldo;

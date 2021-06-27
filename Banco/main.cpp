@@ -9,17 +9,23 @@
 * incluam o que eu preciso...
 */
 #include "Titular.hpp"
+#include "Cpf.hpp"
 
 using namespace std;
 
 /* Objetos passados como parâmetros const só podem ser acessados
 * por métodos const mas métodos const podem acessar objetos não
 * const. Nesse caso, o método recuperaSaldo() é declarado como
-* const na sua assinatura e na sua implementação
+* const na sua assinatura e na sua implementação.
 */
 void ExibeSaldo(const Conta& conta)
 {
 	cout << "O saldo da conta é: " << conta.recuperaSaldo() << endl;
+}
+
+void ExibeNumero(const Conta& conta)
+{
+	cout << "Número da conta : " << conta.recuperaNumero() << endl;
 }
 
 void ExibeNomeTitular(const Titular& titular)
@@ -36,16 +42,23 @@ int main()
 {
 	setlocale(LC_ALL, "Portuguese");
 
-	Titular titular_1("123.456.789-10", "Nirlan");
+	/* Em vez de instanciar um novo objeto Cpf, em uma nova variável,
+	* eu posso instanciar um objeto temporário que será passado diretgo como
+	* parâmetro para o construtor de Titular.
+	*/
+	Titular titular_1(Cpf("123.456.789-10"), "Nirlan");
 	Conta umaConta("123456", titular_1);
 	umaConta.depositar(500);
 	umaConta.sacar(200);
 
 	ExibeNomeTitular(titular_1);
 	ExibeNomeCpfTitular(titular_1);
-	ExibeSaldo(umaConta);	
+	ExibeNumero(umaConta);
+	ExibeSaldo(umaConta);
 
-	Titular titular_2("312.654.987-10", "Gabrielle");
+	/* Eu posso passar uma string para o construtor de Titular, pois como Cpf é
+	   no fundo uma string, ocorre uma CONVERSÂO IMPLÍCITA */
+	Titular titular_2(string("312.654.987-10"), "Gabrielle");
 	Conta umaOutraConta("654321", titular_2);
 
 	umaOutraConta.depositar(300);
@@ -53,13 +66,15 @@ int main()
 
 	ExibeNomeTitular(titular_2);
 	ExibeNomeCpfTitular(titular_2);
+	ExibeNumero(umaOutraConta);
 	ExibeSaldo(umaOutraConta);
 
-	Titular titular_3("987.654.321-10", "Elisabete");
+	Titular titular_3(Cpf("987.654.321-10"), "Elisabete");
 	Conta maisUmaConta("321654", titular_3);
 
 	ExibeNomeTitular(titular_3);
 	ExibeNomeCpfTitular(titular_3);
+	ExibeNumero(maisUmaConta);
 	ExibeSaldo(maisUmaConta);
 
 	// invocando método static

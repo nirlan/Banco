@@ -19,12 +19,14 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Cpf.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Conta.cpp" />
     <ClCompile Include="Titular.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Conta.hpp" />
+    <ClInclude Include="Cpf.hpp" />
     <ClInclude Include="Titular.hpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
