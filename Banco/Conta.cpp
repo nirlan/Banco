@@ -5,13 +5,12 @@
 int Conta::numeroDeContas = 0;
 
 // implementação do método construtor
-Conta::Conta(std::string numeroConta, std::string nomeTitular, std::string cpfTitular) :
-	numeroConta(numeroConta),
-	nomeTitular(nomeTitular),
-	cpfTitular(cpfTitular),
+Conta::Conta(std::string numero, Titular titular) :
+	numero(numero),
+	titular(titular),
 	saldo(0)
 {
-	verificaTamanhoDoNome();
+	// atributo static
 	numeroDeContas++;
 }
 
@@ -49,31 +48,13 @@ float Conta::recuperaSaldo() const
 	return saldo;
 }
 
-std::string Conta::recuperaNomeTitular() const
-{
-	return nomeTitular;
-}
-
-std::string Conta::recuperaCpfTitular() const
-{
-	return cpfTitular;
-}
-
 std::string Conta::recuperaNumero() const
 {
-	return numeroConta;
+	return numero;
 }
 
 // método static
 int Conta::recuperaNumeroDeContas()
 {
 	return numeroDeContas;
-}
-
-void Conta::verificaTamanhoDoNome()
-{
-	if (nomeTitular.size() < 5) {
-		std::cout << "Nome muito curto" << std::endl;
-		exit(EXIT_FAILURE);
-	}
 }
