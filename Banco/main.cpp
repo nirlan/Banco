@@ -7,7 +7,7 @@ using namespace std;
 
 /*	Objetos const só podem ser acessados por métodos const
 	mas métodos const podem acessar objetos não const. Nesse
-	caso, o método recuraSaldo() é declarado como const na sua
+	caso, o método recuperaSaldo() é declarado como const na sua
 	assinatura e na sua implementação
 */
 void ExibeSaldo(const Conta& conta)

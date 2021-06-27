@@ -4,13 +4,21 @@
 // variável static
 int Conta::numeroDeContas = 0;
 
+// implementação do método construtor
 Conta::Conta(std::string numeroConta, std::string nomeTitular, std::string cpfTitular) :
 	numeroConta(numeroConta),
 	nomeTitular(nomeTitular),
 	cpfTitular(cpfTitular),
 	saldo(0)
 {
+	verificaTamanhoDoNome();
 	numeroDeContas++;
+}
+
+// implementação do método destrutor
+Conta::~Conta()
+{
+	numeroDeContas--;
 }
 
 void Conta::sacar(float valorASacar)
@@ -60,4 +68,12 @@ std::string Conta::recuperaNumero() const
 int Conta::recuperaNumeroDeContas()
 {
 	return numeroDeContas;
+}
+
+void Conta::verificaTamanhoDoNome()
+{
+	if (nomeTitular.size() < 5) {
+		std::cout << "Nome muito curto" << std::endl;
+		exit(EXIT_FAILURE);
+	}
 }
