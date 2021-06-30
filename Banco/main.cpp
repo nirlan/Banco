@@ -10,6 +10,7 @@
 */
 #include "Titular.hpp"
 #include "Cpf.hpp"
+#include "Funcionario.hpp"
 
 using namespace std;
 
@@ -30,12 +31,12 @@ void ExibeNumero(const Conta& conta)
 
 void ExibeNomeTitular(const Titular& titular)
 {
-	cout << "O nome do titular é: " << titular.recuperaNomeTitular() << endl;
+	cout << "O nome do titular é: " << titular.recuperaNome() << endl;
 }
 
 void ExibeNomeCpfTitular(const Titular& titular)
 {
-	cout << "O número do CPF do titular é: " << titular.recuperaCpfTitular() << endl;
+	cout << "O número do CPF do titular é: " << titular.recuperaCpf() << endl;
 }
 
 int main()
@@ -79,6 +80,8 @@ int main()
 
 	// invocando método static
 	cout << "Número de contas: " << Conta::recuperaNumeroDeContas() << endl;
+
+	Funcionario funcionario(Cpf("647.830.455-78"), "Nirlan Souza", 100000.00);
 
 	return EXIT_SUCCESS;
 }

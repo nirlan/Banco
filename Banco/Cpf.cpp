@@ -1,7 +1,7 @@
 #include "Cpf.hpp"
 
-Cpf::Cpf(std::string cpf) :
-	cpf(cpf)
+Cpf::Cpf(std::string cpf) 
+	: cpf(cpf)
 {
 	// validação complexa de CPF
 }
