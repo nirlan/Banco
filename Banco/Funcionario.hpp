@@ -9,5 +9,6 @@ private:
 	float salario;
 public:
 	Funcionario(Cpf cpf, std::string nome, float salario);
+	float recuperaSalario();
 };
 
