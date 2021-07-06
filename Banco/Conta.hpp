@@ -17,6 +17,8 @@ private:
 	// atributos privados
 	std::string numero;
 	Titular titular;
+
+protected:
 	float saldo;
 
 public:
@@ -28,7 +30,7 @@ public:
 
 	// método destrutor
 	~Conta();
-
+	
 	void sacar(float valorASacar);
 	void depositar(float valorADepositar);
 	float recuperaSaldo() const;

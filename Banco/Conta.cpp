@@ -22,16 +22,20 @@ Conta::~Conta()
 
 void Conta::sacar(float valorASacar)
 {
-	if (saldo < 0) {
+	std::cout << "Chamando método sacar de Conta" << std::endl;
+	if (valorASacar < 0) {
 		std::cout << "Não pode sacar valor negativo" << std::endl;
 		return;
 	}
 
-	if (valorASacar > saldo) {
+	float tarifaDeSaque = valorASacar * 0.05;
+	float valorDoSaque = valorASacar + tarifaDeSaque;
+
+	if (valorDoSaque > saldo) {
 		std::cout << "Saldo insuficiente" << std::endl;
 	}
 
-	saldo -= valorASacar;
+	saldo -= valorDoSaque;
 }
 
 void Conta::depositar(float valorADepositar)

@@ -2,6 +2,7 @@
 #include <string>
 #include <locale>
 #include "Conta.hpp"
+#include "ContaPoupanca.hpp"
 
 /* Apesar de Conta.hpp já incluir Titular.hpp
 * optei por incluir Titular.hpp individualmente
@@ -39,6 +40,11 @@ void ExibeNomeCpfTitular(const Titular& titular)
 	cout << "O número do CPF do titular é: " << titular.recuperaCpf() << endl;
 }
 
+void RealizaSaque(Conta& conta)
+{
+	conta.sacar(200);
+}
+
 int main()
 {
 	setlocale(LC_ALL, "Portuguese");
@@ -48,9 +54,9 @@ int main()
 	* parâmetro para o construtor de Titular.
 	*/
 	Titular titular_1(Cpf("123.456.789-10"), "Nirlan");
-	Conta umaConta("123456", titular_1);
+	ContaPoupanca umaConta("123456", titular_1);
 	umaConta.depositar(500);
-	umaConta.sacar(200);
+	RealizaSaque(umaConta);
 
 	ExibeNomeTitular(titular_1);
 	ExibeNomeCpfTitular(titular_1);
@@ -60,7 +66,7 @@ int main()
 	/* Eu posso passar uma string para o construtor de Titular, pois como Cpf é
 	   no fundo uma string, ocorre uma CONVERSÂO IMPLÍCITA */
 	Titular titular_2(string("312.654.987-10"), "Gabrielle");
-	Conta umaOutraConta("654321", titular_2);
+	ContaPoupanca umaOutraConta("654321", titular_2);
 
 	umaOutraConta.depositar(300);
 	umaOutraConta.sacar(50);
