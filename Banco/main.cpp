@@ -50,7 +50,7 @@ int main()
 	setlocale(LC_ALL, "Portuguese");
 
 	/* Em vez de instanciar um novo objeto Cpf, em uma nova variável,
-	* eu posso instanciar um objeto temporário que será passado diretgo como
+	* eu posso instanciar um objeto temporário que será passado direto como
 	* parâmetro para o construtor de Titular.
 	*/
 	Titular titular_1(Cpf("123.456.789-10"), "Nirlan");
@@ -69,7 +69,7 @@ int main()
 	ContaPoupanca umaOutraConta("654321", titular_2);
 
 	umaOutraConta.depositar(300);
-	umaOutraConta.sacar(50);
+	RealizaSaque(umaOutraConta);
 
 	ExibeNomeTitular(titular_2);
 	ExibeNomeCpfTitular(titular_2);
