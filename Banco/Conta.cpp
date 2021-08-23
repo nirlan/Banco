@@ -17,7 +17,15 @@ Conta::Conta(std::string numero, Titular titular) :
 // implementação do método destrutor
 Conta::~Conta()
 {
+	std::cout << "Destrutor da conta corrente" << std::endl;
 	numeroDeContas--;
+}
+
+float Conta::taxaDeSaque() const
+{
+	std::cout << "Chamando método taxaDeSaque de conta corrente" << std::endl;
+
+	return 0.05;
 }
 
 void Conta::sacar(float valorASacar)
@@ -28,7 +36,7 @@ void Conta::sacar(float valorASacar)
 		return;
 	}
 
-	float tarifaDeSaque = valorASacar * 0.05;
+	float tarifaDeSaque = valorASacar * taxaDeSaque();
 	float valorDoSaque = valorASacar + tarifaDeSaque;
 
 	if (valorDoSaque > saldo) {

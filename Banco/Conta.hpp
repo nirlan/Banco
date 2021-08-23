@@ -29,13 +29,14 @@ public:
 	Conta(std::string numero, Titular titular);
 
 	// método destrutor
-	~Conta();
+	virtual ~Conta();
 	
 	// "virtual" permite que o compilador em tempo de execução verifique
 	// se o objeto sobre o qual está sendo chamado o método "sacar", que
 	// é sobrescrito
-	virtual void sacar(float valorASacar);
+	void sacar(float valorASacar);
 	void depositar(float valorADepositar);
 	float recuperaSaldo() const;
 	std::string recuperaNumero() const;
+	virtual float taxaDeSaque() const;
 };

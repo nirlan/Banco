@@ -49,11 +49,11 @@ int main()
 {
 	setlocale(LC_ALL, "Portuguese");
 
-	/* Em vez de instanciar um novo objeto Cpf, em uma nova variável,
-	* eu posso instanciar um objeto temporário que será passado direto como
-	* parâmetro para o construtor de Titular.
-	*/
+	// Em vez de instanciar um novo objeto Cpf, em uma nova variável,
+	// eu posso instanciar um objeto temporário que será passado direto como
+	// parâmetro para o construtor de Titular.	
 	Titular titular_1(Cpf("123.456.789-10"), "Nirlan");
+
 	ContaPoupanca umaConta("123456", titular_1);
 	umaConta.depositar(500);
 	RealizaSaque(umaConta);
@@ -63,10 +63,10 @@ int main()
 	ExibeNumero(umaConta);
 	ExibeSaldo(umaConta);
 
-	/* Eu posso passar uma string para o construtor de Titular, pois como Cpf é
-	   no fundo uma string, ocorre uma CONVERSÂO IMPLÍCITA */
+	// Eu posso passar uma string para o construtor de Titular, pois como Cpf é
+	// no fundo uma string, ocorre uma CONVERSÂO IMPLÍCITA
 	Titular titular_2(string("312.654.987-10"), "Gabrielle");
-	ContaPoupanca umaOutraConta("654321", titular_2);
+	Conta umaOutraConta("654321", titular_2);
 
 	umaOutraConta.depositar(300);
 	RealizaSaque(umaOutraConta);
