@@ -38,5 +38,9 @@ public:
 	void depositar(float valorADepositar);
 	float recuperaSaldo() const;
 	std::string recuperaNumero() const;
-	virtual float taxaDeSaque() const;
+
+	// Método puramento virtual; na classe base Conta esse método
+	// não tem implementação, mas sua implementação é obrigatória
+	// nas sub classes.
+	virtual float taxaDeSaque() const = 0;
 };
