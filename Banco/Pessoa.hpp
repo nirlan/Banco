@@ -6,7 +6,10 @@ class Pessoa
 {
 private:
 	Cpf cpf;
+
+protected:
 	std::string nome;
+
 public:
 	Pessoa(Cpf cpf, std::string nome);
 	std::string recuperaNome() const;

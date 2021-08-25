@@ -31,9 +31,8 @@ public:
 	// método destrutor
 	virtual ~Conta();
 	
-	// "virtual" permite que o compilador em tempo de execução verifique
-	// se o objeto sobre o qual está sendo chamado o método "sacar", que
-	// é sobrescrito
+	// "virtual" permite que o código, em tempo de execução, verifique
+	// se o objeto sobre o qual está sendo chamado o método é sobrescrito
 	void sacar(float valorASacar);
 	void depositar(float valorADepositar);
 	float recuperaSaldo() const;

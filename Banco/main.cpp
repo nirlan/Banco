@@ -68,9 +68,7 @@ int main()
 	// no fundo uma string, ocorre uma CONVERSÂO IMPLÍCITA
 	Titular titular_2(string("312.654.987-10"), "Gabrielle");
 	ContaCorrente umaOutraConta("654321", titular_2);
-
 	umaOutraConta.depositar(300);
-	RealizaSaque(umaOutraConta);
 
 	ExibeNomeTitular(titular_2);
 	ExibeNomeCpfTitular(titular_2);
@@ -83,6 +81,10 @@ int main()
 	ExibeNomeTitular(titular_3);
 	ExibeNomeCpfTitular(titular_3);
 	ExibeNumero(maisUmaConta);
+	ExibeSaldo(maisUmaConta);
+
+	umaOutraConta.transferePara(maisUmaConta, 250);
+	ExibeSaldo(umaOutraConta);
 	ExibeSaldo(maisUmaConta);
 
 	// invocando método static
