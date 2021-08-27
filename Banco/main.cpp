@@ -13,6 +13,7 @@
 #include "Titular.hpp"
 #include "Cpf.hpp"
 #include "Funcionario.hpp"
+#include "Gerente.hpp"
 
 using namespace std;
 
@@ -90,7 +91,7 @@ int main()
 	// invocando método static
 	cout << "Número de contas: " << Conta::recuperaNumeroDeContas() << endl;
 
-	Funcionario funcionario(Cpf("647.830.455-78"), "Nirlan Souza", 100000.00);
+	Gerente funcionario(Cpf("647.830.455-78"), "Nirlan Souza", 100000.00);
 	cout << "Nome do funcionário: " << funcionario.recuperaNome() << endl;
 	cout << "CPF n. " << funcionario.recuperaCpf() << endl;
 	cout << "Salário: $ ";
