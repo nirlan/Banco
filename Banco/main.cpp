@@ -16,6 +16,8 @@
 #include "Gerente.hpp"
 
 using namespace std;
+using namespace Colaboradores;
+using namespace Login;
 
 /* Objetos passados como parâmetros const só podem ser acessados
 * por métodos const mas métodos const podem acessar objetos não

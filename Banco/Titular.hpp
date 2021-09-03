@@ -4,7 +4,7 @@
 #include "Autenticavel.hpp"
 #include "Cpf.hpp"
 
-class Titular : public Pessoa, public Autenticavel
+class Titular : public Pessoa, public Login::Autenticavel
 {
 public:
 	Titular(Cpf cpf, std::string nome, std::string senha);	
