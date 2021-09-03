@@ -47,6 +47,16 @@ void RealizaSaque(Conta& conta)
 	conta.sacar(200);
 }
 
+void FazLogin(Autenticavel& alguem, string senha)
+{
+	if (alguem.autentica(senha)) {
+		cout << "Login realizado com sucesso" << endl;
+	}
+	else {
+		cout << "Senha inválida" << endl;
+	}
+}
+
 int main()
 {
 	setlocale(LC_ALL, "Portuguese");
@@ -54,7 +64,8 @@ int main()
 	// Em vez de instanciar um novo objeto Cpf, em uma nova variável,
 	// eu posso instanciar um objeto temporário que será passado direto como
 	// parâmetro para o construtor de Titular.	
-	Titular titular_1(Cpf("123.456.789-10"), "Nirlan");
+	Titular titular_1(Cpf("123.456.789-10"), "Nirlan", "umasenha");
+	FazLogin(titular_1, "umasenha");
 
 	ContaPoupanca umaConta("123456", titular_1);
 	umaConta.depositar(500);
@@ -67,7 +78,7 @@ int main()
 
 	// Eu posso passar uma string para o construtor de Titular, pois como Cpf é
 	// no fundo uma string, ocorre uma CONVERSÂO IMPLÍCITA
-	Titular titular_2(string("312.654.987-10"), "Gabrielle");
+	Titular titular_2(string("312.654.987-10"), "Gabrielle", "outrasenha");
 	ContaCorrente umaOutraConta("654321", titular_2);
 	umaOutraConta.depositar(300);
 
@@ -76,7 +87,7 @@ int main()
 	ExibeNumero(umaOutraConta);
 	ExibeSaldo(umaOutraConta);
 
-	Titular titular_3(Cpf("987.654.321-10"), "Elisabete");
+	Titular titular_3(Cpf("987.654.321-10"), "Elisabete", "maisumasenha");
 	ContaCorrente maisUmaConta("321654", titular_3);
 
 	ExibeNomeTitular(titular_3);
@@ -91,7 +102,7 @@ int main()
 	// invocando método static
 	cout << "Número de contas: " << Conta::recuperaNumeroDeContas() << endl;
 
-	Gerente funcionario(Cpf("647.830.455-78"), "Nirlan Souza", 100000.00);
+	Gerente funcionario(Cpf("647.830.455-78"), "Nirlan Souza", 100000.00, "senhagerente");
 	cout << "Nome do funcionário: " << funcionario.recuperaNome() << endl;
 	cout << "CPF n. " << funcionario.recuperaCpf() << endl;
 	cout << "Salário: $ ";
