@@ -14,6 +14,7 @@
 #include "Cpf.hpp"
 #include "Funcionario.hpp"
 #include "Gerente.hpp"
+#include "DiaDaSemana.hpp"
 
 using namespace std;
 using namespace Colaboradores;
@@ -104,7 +105,8 @@ int main()
 	// invocando método static
 	cout << "Número de contas: " << Conta::recuperaNumeroDeContas() << endl;
 
-	Gerente funcionario(Cpf("647.830.455-78"), "Nirlan Souza", 100000.00, "senhagerente");
+	//utilizando variavel "enum"
+	Gerente funcionario(Cpf("647.830.455-78"), "Nirlan Souza", 100000.00, "senhagerente", Sexta);
 	cout << "Nome do funcionário: " << funcionario.recuperaNome() << endl;
 	cout << "CPF n. " << funcionario.recuperaCpf() << endl;
 	cout << "Salário: $ ";
