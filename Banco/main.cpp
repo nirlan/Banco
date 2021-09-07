@@ -106,7 +106,13 @@ int main()
 	cout << "Número de contas: " << Conta::recuperaNumeroDeContas() << endl;
 
 	//utilizando variavel "enum"
-	Gerente funcionario(Cpf("647.830.455-78"), "Nirlan Souza", 100000.00, "senhagerente", Sexta);
+	Gerente funcionario(
+		Cpf("647.830.455-78"),
+		"Nirlan Souza",
+		100000.00,
+		DiaDaSemana::Sexta,
+		"senhagerente"
+	);
 	cout << "Nome do funcionário: " << funcionario.recuperaNome() << endl;
 	cout << "CPF n. " << funcionario.recuperaCpf() << endl;
 	cout << "Salário: $ ";

@@ -5,7 +5,13 @@
 class Gerente final : public Colaboradores::Funcionario, public Login::Autenticavel
 {
 public:
-	Gerente(Cpf cpf, std::string nome, float salario, std::string senha, DiaDaSemana diaDoPagamento);
+	Gerente(
+		Cpf cpf, 
+		std::string nome, 
+		float salario, 
+		DiaDaSemana diaDoPagamento,	
+		std::string senha
+		);
 	float bonificacao() const;
 };
 
