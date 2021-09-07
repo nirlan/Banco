@@ -13,6 +13,7 @@ namespace Colaboradores {
 		DiaDaSemana diaDoPagamento;
 	public:
 		Funcionario(Cpf cpf, std::string nome, float salario, DiaDaSemana diaDoPagamento);
+		virtual ~Funcionario();
 		std::string recuperaNome() const;
 		float recuperaSalario() const;
 		virtual float bonificacao() const = 0;

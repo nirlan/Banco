@@ -1,5 +1,6 @@
 #pragma once
 #include "Funcionario.hpp"
+#include "DiaDaSemana.hpp"
 
 class Caixa final : public Colaboradores::Funcionario
 {

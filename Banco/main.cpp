@@ -83,7 +83,7 @@ int main()
 	// no fundo uma string, ocorre uma CONVERSÂO IMPLÍCITA
 	Titular titular_2(string("312.654.987-10"), "Gabrielle", "outrasenha");
 	ContaCorrente umaOutraConta("654321", titular_2);
-	umaOutraConta.depositar(300);
+	umaOutraConta += 300;
 
 	ExibeNomeTitular(titular_2);
 	ExibeNomeCpfTitular(titular_2);

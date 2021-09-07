@@ -35,6 +35,12 @@ public:
 	// se o objeto sobre o qual está sendo chamado o método é sobrescrito
 	void sacar(float valorASacar);
 	void depositar(float valorADepositar);
+
+	// Operator overload
+	// Permitirá fazer "umaConta += 300;" sem precisar usar diretamente
+	// o método "depositar"
+	void operator+=(float valorADepositar);
+
 	float recuperaSaldo() const;
 	std::string recuperaNumero() const;
 

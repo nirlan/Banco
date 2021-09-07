@@ -1,5 +1,6 @@
 #pragma once
 #include "Funcionario.hpp"
+#include "DiaDaSemana.hpp"
 #include "Autenticavel.hpp"
 
 class Gerente final : public Colaboradores::Funcionario, public Login::Autenticavel

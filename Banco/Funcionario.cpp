@@ -6,6 +6,10 @@ Colaboradores::Funcionario::Funcionario(Cpf cpf, std::string nome, float salario
 {
 }
 
+Colaboradores::Funcionario::~Funcionario()
+{
+}
+
 std::string Colaboradores::Funcionario::recuperaNome() const
 {
 	return nome;
@@ -15,4 +19,3 @@ float Colaboradores::Funcionario::recuperaSalario() const
 {
 	return salario;
 }
-

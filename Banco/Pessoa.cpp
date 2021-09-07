@@ -7,6 +7,10 @@ Pessoa::Pessoa(Cpf cpf, std::string nome)
 	verificaTamanhoDoNome();
 }
 
+Pessoa::~Pessoa()
+{
+}
+
 void Pessoa::verificaTamanhoDoNome()
 {
 	if (nome.size() < 5) {

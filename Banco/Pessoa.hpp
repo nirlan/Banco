@@ -12,6 +12,7 @@ protected:
 
 public:
 	Pessoa(Cpf cpf, std::string nome);
+	virtual ~Pessoa();
 	std::string recuperaNome() const;
 	std::string recuperaCpf() const;
 

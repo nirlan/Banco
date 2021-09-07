@@ -4,8 +4,7 @@ Gerente::Gerente(
 	Cpf cpf,
 	std::string nome,
 	float salario,
-	DiaDaSemana
-	diaDoPagamento,
+	DiaDaSemana	diaDoPagamento,
 	std::string senha) :
 	Funcionario(cpf, nome, salario, diaDoPagamento), Autenticavel(senha)
 {
